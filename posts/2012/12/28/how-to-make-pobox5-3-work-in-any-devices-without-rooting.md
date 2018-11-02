@@ -433,7 +433,7 @@ adb install POBox5.3_aligned.apk</pre>
 
 初めて書いた記事なので至らない点など多々あると思いますが、なにとぞご容赦のほどを…
 
-[Twitter &#8211; @watiko][19]
+[Twitter -- @watiko][19]
 
 &nbsp;
 
