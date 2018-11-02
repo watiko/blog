@@ -1,0 +1,12 @@
+baseURL = "http://watiko.net/"
+languageCode = "ja-jp"
+title = "TypoTypoTypo"
+
+publishdir = "public"
+contentDir = "posts"
+hasCJKLanguage = true
+
+theme = "beautifulhugo"
+
+[Params]
+  useHLJS = true
