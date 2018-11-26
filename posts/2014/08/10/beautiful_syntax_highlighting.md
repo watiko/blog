@@ -22,9 +22,7 @@ highlightjs
 
 まずは、開いて `language` や `style` をポチポチしてみてください。どんな感じか解ると思います。
 
-設定できるすべての項目が選べるわけではないので、「( ・∀・)ｲｲ!!」と思ったなら
-  
-[このページ](https://highlightjs.org/image/test.html "live demo")でいろいろ試してみるのがいいと思います。
+設定できるすべての項目が選べるわけではないので、[このページ](https://highlightjs.org/image/test.html "live demo")でいろいろ試してみるのがいいと思います。
 
 <!--more-->
 
