@@ -1,0 +1,12 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "author": "watiko",
+  "license": "UNLICENSED",
+  "scripts": {
+    "publish": "firebase deploy --only hosting",
+    "build": "hugo",
+    "start": "hugo server"
+  }
+}
