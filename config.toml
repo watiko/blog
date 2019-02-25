@@ -10,3 +10,10 @@ theme = "beautifulhugo"
 
 [Params]
   useHLJS = true
+  logo = "/image/logo.png"
+
+[Author]
+  name = "watiko"
+  website = "watiko.net"
+  github = "watiko"
+  twitter = "watiko"
