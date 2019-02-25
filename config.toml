@@ -2,6 +2,8 @@ baseURL = "https://watiko.net/"
 languageCode = "ja-jp"
 title = "TypoTypoTypo"
 
+googleAnalytics = "UA-18231761-2"
+
 publishdir = "public"
 contentDir = "posts"
 hasCJKLanguage = true
