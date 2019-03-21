@@ -5,6 +5,7 @@
   "author": "watiko",
   "license": "UNLICENSED",
   "scripts": {
+    "prepublish": "npm run build",
     "publish": "firebase deploy --only hosting",
     "build": "hugo",
     "start": "hugo server"
