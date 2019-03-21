@@ -64,7 +64,7 @@ prog.cc:5:14: note: the required expression '(x + x)' would be ill-formed
 
 早速ですが、普段 C++ 書かないなりにひねり出したのが以下のコードです。
 
-{{< gist watiko 88f9c1f5a64cc6805e07774d5e91305a >}}
+{{< gist watiko 88f9c1f5a64cc6805e07774d5e91305a "concept.cpp" >}}
 https://wandbox.org/permlink/nsQsvAG3o637gcuI
 
 - OrdTraits: テンプレートの特殊化(traits パターンと呼ばれるらしい)
@@ -77,3 +77,9 @@ Concept が導入されることでより安全で分かりやすいコードに
 
 残念なポイントとして、 `OrdTraits` と `Ord` の間で名前が衝突してしまうので二つの名前を使い分ける必要があるところが挙げられます。
 また、構文的にも非常に分かりずらいので(特に traits 周り)実用したいかと言われるとなんとも言えないところですね。
+
+## おまけ
+
+Scala で上記のサンプルと同じことをかくとこんな感じ。(Wandbox で動かせる)
+
+{{< gist watiko 88f9c1f5a64cc6805e07774d5e91305a "implicit.scala" >}}
