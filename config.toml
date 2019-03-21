@@ -4,6 +4,7 @@ title = "TypoTypoTypo"
 
 googleAnalytics = "UA-18231761-2"
 
+enableGitInfo = true
 publishdir = "public"
 contentDir = "posts"
 hasCJKLanguage = true
