@@ -8,5 +8,8 @@
     "publish": "firebase deploy --only hosting",
     "build": "hugo",
     "start": "hugo server"
+  },
+  "dependencies": {
+    "firebase-tools": "^6.5.0"
   }
 }
