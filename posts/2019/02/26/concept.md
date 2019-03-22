@@ -80,6 +80,14 @@ Concept が導入されることでより安全で分かりやすいコードに
 
 ## おまけ
 
+### Scala
+
 Scala で上記のサンプルと同じことをかくとこんな感じ。(Wandbox で動かせる)
 
 {{< gist watiko 88f9c1f5a64cc6805e07774d5e91305a "implicit.scala" >}}
+
+### Haskell
+
+Haskell で上記のサンプルと同じことをかくとこんな感じ。(Wandbox で動かせる)
+
+{{< gist watiko 88f9c1f5a64cc6805e07774d5e91305a "type-class.hs" >}}
