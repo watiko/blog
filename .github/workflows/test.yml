@@ -12,8 +12,15 @@ jobs:
       with:
         node-version: 12.x
     - name: setup hugo
-      run: sudo apt-get install -y hugo
+      run: |
+        cd /tmp
+        HUGO_DEB="hugo_${HUGO_VERSION}_Linux-64bit.deb"
+        wget "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_DEB}"
+        sudo dpkg -i "$HUGO_DEB"
+        hugo version
+      env:
+        HUGO_VERSION: 0.59.1
     - name: build test
       run: |
         npm ci
-        npm run build
+        npm run website
