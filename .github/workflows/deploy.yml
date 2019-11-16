@@ -1,0 +1,24 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: setup hugo
+      run: sudo apt-get install -y hugo
+    - name: publish
+      run: |
+        npm ci
+        npm run publish
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
