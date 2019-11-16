@@ -14,6 +14,7 @@ theme = "beautifulhugo"
 [Params]
   useHLJS = true
   logo = "/image/logo.png"
+  mainSections = ["post","posts"]
 
 [Author]
   name = "watiko"
