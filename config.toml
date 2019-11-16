@@ -11,8 +11,11 @@ hasCJKLanguage = true
 
 theme = "beautifulhugo"
 
+# use Chroma
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+
 [Params]
-  useHLJS = true
   logo = "/image/logo.png"
   mainSections = ["post","posts"]
 
