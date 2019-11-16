@@ -1,8 +1,8 @@
 ## Requirements
 
 ```bash
-$ npm install -g firebase-tools
-$ firebase login
+$ npm ci
+$ npx firebase login
 $ brew install hugo
 $ pip install Pygments
 ```
