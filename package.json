@@ -11,6 +11,6 @@
     "start": "hugo server"
   },
   "dependencies": {
-    "firebase-tools": "^6.5.0"
+    "firebase-tools": "^7.7.0"
   }
 }
