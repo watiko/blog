@@ -10,15 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: setup submodules
+      run: git submodule update --init --recursive
     - name: setup node
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
     - name: setup hugo
-      run: sudo apt-get install -y hugo
+      run: |
+        cd /tmp
+        HUGO_DEB="hugo_${HUGO_VERSION}_Linux-64bit.deb"
+        wget "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_DEB}"
+        sudo dpkg -i "$HUGO_DEB"
+        hugo version
+      env:
+        HUGO_VERSION: 0.59.1
     - name: publish
       run: |
         npm ci
+        npm run website
         npm run publish
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

@@ -5,9 +5,8 @@
   "author": "watiko",
   "license": "UNLICENSED",
   "scripts": {
-    "prepublish": "npm run build",
+    "website": "hugo",
     "publish": "firebase deploy --only hosting",
-    "build": "hugo",
     "start": "hugo server"
   },
   "dependencies": {
