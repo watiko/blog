@@ -1,0 +1,19 @@
+name: test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: setup hugo
+      run: sudo apt-get install -y hugo
+    - name: build test
+      run: |
+        npm ci
+        npm run build
