@@ -6,11 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: setup submodules
       run: git submodule update --init --recursive
     - name: setup node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: 12.x
     - name: setup hugo
@@ -21,7 +21,7 @@ jobs:
         sudo dpkg -i "$HUGO_DEB"
         hugo version
       env:
-        HUGO_VERSION: 0.74.3
+        HUGO_VERSION: 0.89.4
     - name: build test
       run: |
         npm ci
