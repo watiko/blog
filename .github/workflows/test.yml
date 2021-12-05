@@ -21,7 +21,7 @@ jobs:
         sudo dpkg -i "$HUGO_DEB"
         hugo version
       env:
-        HUGO_VERSION: 0.74.3
+        HUGO_VERSION: 0.89.4
     - name: build test
       run: |
         npm ci
