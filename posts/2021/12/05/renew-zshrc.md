@@ -128,13 +128,28 @@ zinitを用いて補完設定などを積極的に遅延実行させることで
 
 ### zinit
 
-この記事ではzinitについての基本などはあまり解説しないので、公式のドキュメントや他の人が書いた記事を参考にすること。(この記事の中ではzinitのmodifier指定の際に `modifier=value` という構文を使っている)
+この記事ではzinitについての基本などはあまり解説しないので、公式のドキュメントや他の人が書いた記事を参考にすること。
 
 - 公式
   - [zdharma-continuum/zinit](https://github.com/zdharma-continuum/zinit)
   - [Zinit Wiki](https://zdharma-continuum.github.io/zinit/wiki/)
 - おすすめの記事
   - [zinit をしっかりと理解する](https://zenn.dev/xeres/articles/2021-05-05-understanding-zinit-syntax)
+
+詳しくは上記のリンク先などを見てもらうとして、簡単に紹介するとzsh向けの高速なプラグインマネージャーということになる。そもそもシェルのプラグインとはなんぞやという話になるが、おおよそ読み込むと便利な関数などを追加してくれるもの程度の理解で問題はない。[awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)を見るともっと具体的にわかる。zinit以外のプラグインマネージャーについては辛口ではあるものの[Comparison of ZSH frameworks and plugin managers](https://gist.github.com/laggardkernel/4a4c4986ccdcaf47b91e8227f9868ded)が非常に参考になる。
+
+私のzinitの使い方で特徴的な点をいくつか注意事項として述べておく。この記事では紹介しないが後述のdotfilesリポジトリの中を確認する際に把握しておいた方が良いと思われるものを含む。
+
+- プラグインの設定に `for-syntax` を用いている。
+  - [The For-Syntax](https://zdharma-continuum.github.io/zinit/wiki/For-Syntax/)
+  - `zinit ice ...` と `zinit load ...` という組で扱うのが標準だが、2つのコマンドに分かれるのが嫌でこの構文を採用している。
+- modifier指定の際に `modifier=value` という構文を使っている。
+  - [Alternate Ice Syntax](https://zdharma-continuum.github.io/zinit/wiki/Alternate-Ice-Syntax/)
+  - 区切り文字なしの書き方が一般的だが個人的には読み辛いためこの構文を採用している。他の情報源を見る際はこのことを頭に入れておいてほしい。
+- `zdharma-continuum/null`
+  - zinitではリモートのgitリポジトリなどからスクリプトを取得し、それを実行するというのが基本になっている。しかし、他の手段でインストール済みのスクリプトに対してzinitで読み込みタイミングや、事前コンパイルなどを行っておきたいことがある。そのような場合に `zdharma-continuum/null` をリポジトリに指定し、`atpull` などで全く別の内容のスクリプトなどを処理するのがイディオムになっている。
+- `zinit-annex-bin-gem-node`
+  - zinitではannexというzinitの挙動を拡張するようなプラグインが存在している。そのうちの1つである[zinit-annex-bin-gem-node](https://github.com/zdharma-continuum/zinit-annex-bin-gem-node)によって提供されるsbin modifierが非常に便利なため、私の設定では多用されている。
 
 ### 補完設定
 
@@ -182,6 +197,10 @@ Benchmark 1: zsh -i -l -c exit
   Time (mean ± σ):      84.9 ms ±   3.7 ms    [User: 52.3 ms, System: 26.8 ms]
   Range (min … max):    82.1 ms …  99.9 ms    34 runs
 ```
+
+### 余談
+
+最近は `.zshrc` のみならず、dotfilesをきちんと管理するということをしていなかった。しかし、この `.zshrc` を見直したタイミングで管理をちゃんとやる気が出てきたので、[rcm](https://github.com/thoughtbot/rcm)を用いてdotfilesリポジトリを管理してみることにした。今の所シンプルな用途では困っていないし、自分でインストーラーなどを管理する手間が省けているため好感触。
 
 ## 参考
 
