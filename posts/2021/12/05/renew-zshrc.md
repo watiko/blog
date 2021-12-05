@@ -124,7 +124,11 @@ Summary
 
 ## 最適化
 
-zinitを用いて補完設定などを積極的に遅延実行させることで起動にかかる時間を短縮していく。単純に実行速度が遅いコマンドなどがあればそれを除去するのも効果がある。この記事ではzinitについての基本などはあまり解説しないので、公式のドキュメントや他の人が書いた記事を参考にすること。(この記事の中ではzinitのmodifier指定の際に `modifier=value` という構文を使っている)
+zinitを用いて補完設定などを積極的に遅延実行させることで起動にかかる時間を短縮していく。単純に実行速度が遅いコマンドなどがあればそれを除去するのも効果がある。
+
+### zinit
+
+この記事ではzinitについての基本などはあまり解説しないので、公式のドキュメントや他の人が書いた記事を参考にすること。(この記事の中ではzinitのmodifier指定の際に `modifier=value` という構文を使っている)
 
 - 公式
   - [zdharma-continuum/zinit](https://github.com/zdharma-continuum/zinit)
@@ -136,9 +140,9 @@ zinitを用いて補完設定などを積極的に遅延実行させることで
 
 zshの補完周りの詳しい話は `man zshcompsys` を見ること。zinit固有の話はリポジトリの[Completions](https://github.com/zdharma-continuum/zinit#completions-2)にまとまっている。
 
-zinitの補完周りは `compdef` を差し替えて `compinit` 後に改めて `zinit cdreplay` (`zicompinit`) で適用するような形になる。この時に自分の制御外で `compinit` を呼び出すようなスクリプトが存在すると速度に影響が出るため気をつける必要がある。(`zprof` で確認できる)
+zinitの補完周りは `compdef` を差し替えて `compinit` 後に改めて `zinit cdreplay` (`zicompinit`) で適用するような形となる。この時に自分の制御外で `compinit` を呼び出すようなスクリプトが存在すると速度に影響が出るため気をつける必要がある。(`zprof` を使って確認できる)
 
-また、補完周りのスクリプトは実行に時間がかかることが多いため、遅延実行するとよい。zinitではwait modifierを設定することでプロンプト表示後に実行を遅延することができる。詳しくは[Wiki](https://zdharma-continuum.github.io/zinit/wiki/Example-wait-conditions/)を見てほしいが、`0a`, `0b`, `0c` として表示直後に実行する中でもある程度の実行順制御ができるので、補完系の順序制御はこれを活用する。(順序を制御せずに遅延実行だけした場合にどうなるかというのはあまりわかっていないが、プロンプト表示後に補完が有効になるまでの時間が伸びたりするのかもしれない)
+また、補完周りのスクリプトの実行時間は長いことが多いため、遅延実行するとよい。zinitではwait modifierを設定することでプロンプト表示後に実行を遅延できる。詳しくは[Wiki](https://zdharma-continuum.github.io/zinit/wiki/Example-wait-conditions/)を見てほしいが、`0a`, `0b`, `0c` として表示直後に実行する中でもある程度の実行順制御ができるので、補完系の順序制御はこれを活用する。(順序を制御せずに遅延実行だけした場合にどうなるかというのはあまりわかっていないが、プロンプト表示後に補完が有効になるまでの時間が伸びたりする懸念はある)
 
 私は以下のような形で活用している。
 
