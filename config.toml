@@ -2,25 +2,50 @@ baseURL = "https://watiko.net/"
 languageCode = "ja-jp"
 title = "TypoTypoTypo"
 
-googleAnalytics = "UA-18231761-2"
+googleAnalytics = "G-DF9X93R3ZP"
 
-enableGitInfo = true
-publishdir = "public"
 contentDir = "posts"
+enableGitInfo = true
 hasCJKLanguage = true
+publishdir = "public"
 
-theme = "beautifulhugo"
+theme = "PaperMod"
 
-# use Chroma
-pygmentsUseClasses = true
-pygmentsCodeFences = true
+[minify]
+disableXML = true
+minifyOutput = true
 
-[Params]
-  logo = "/image/logo.png"
-  mainSections = ["post","posts"]
+[params]
+mainSections = ["post", "posts"]
 
-[Author]
-  name = "watiko"
-  website = "watiko.net"
-  github = "watiko"
-  twitter = "watiko"
+author = "watiko"
+
+disableSpecial1stPost = true
+showBreadCrumbs = false
+showCodeCopyButtons = true
+showPostNavLinks = true
+showReadingTime = true
+showToc = true
+
+[params.homeInfoParams]
+content = "気になったこととかやったこととかをメモしておく場所"
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/watiko"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/watiko"
+
+[[params.socialIcons]]
+name = "rss"
+url = "index.xml"
+
+[params.editPost]
+appendFilePath = true
+text = "Suggest Changes"
+url = "https://github.com/watiko/blog/tree/master/posts"
+
+[author]
+name = "watiko"
