@@ -12,7 +12,7 @@ jobs:
     - name: setup node
       uses: actions/setup-node@v2
       with:
-        node-version: 12.x
+        node-version: 16.x
     - name: setup hugo
       run: |
         cd /tmp
@@ -21,7 +21,7 @@ jobs:
         sudo dpkg -i "$HUGO_DEB"
         hugo version
       env:
-        HUGO_VERSION: 0.89.4
+        HUGO_VERSION: 0.90.1
     - name: build test
       run: |
         npm ci
